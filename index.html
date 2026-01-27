@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro de Entradas (QR)</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 16px; }
+    h2 { margin-top: 28px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    input, textarea, button, select { font-size: 16px; padding: 10px; }
+    textarea { width: 100%; min-height: 90px; }
+    #preview { border: 1px solid #ccc; padding: 12px; border-radius: 8px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td { border: 1px solid #ddd; padding: 8px; font-size: 14px; }
+    th { background: #f6f6f6; }
+    .danger { background: #ffecec; border: 1px solid #ffb3b3; }
+    .ok { background: #eefaf0; border: 1px solid #b7e4c7; }
+    .muted { color: #666; font-size: 13px; }
+    code { background: #f3f3f3; padding: 2px 6px; border-radius: 6px; }
+  </style>
+
+  <!-- CDNs (Netlify HTTPS OK) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.10/html5-qrcode.min.js"></script>
+</head>
+
+<body>
+  <h1>Registro de Entradas al Condominio</h1>
+  <p class="muted">
+    Para escaneo: abre esta página en <strong>HTTPS</strong> (Netlify lo es). Si el navegador pide permiso de cámara, concédelo.
+  </p>
+
+  <h2>1) Generar QR (para entregar al trabajador)</h2>
+  <div class="row">
+    <input id="wid" placeholder="ID (ej. W-001)" />
+    <input id="wname" placeholder="Nombre" />
+    <input id="wcompany" placeholder="Empresa" />
+    <input id="wrole" placeholder="Rol" />
+    <button id="btnMakeQr">Generar QR</button>
+  </div>
+  <p>Contenido QR (JSON):</p>
+  <textarea id="qrJson" readonly></textarea>
+  <div id="qrCanvasWrap"></div>
+
+  <h2>2) Escanear QR (caseta)</h2>
+  <div class="row">
+    <button id="btnStart">Iniciar escáner</button>
+    <button id="btnStop">Detener</button>
+    <select id="cameraSelect" style="min-width: 220px;">
+      <option value="">(Cámara: automática)</option>
+    </select>
+  </div>
+  <div class="muted" style="margin-top:8px;">
+    Si el escáner no inicia: verifica permisos de cámara del sitio, o cambia la cámara en el selector.
+  </div>
+  <div id="reader" style="width: 320px; max-width: 100%; margin-top: 12px;"></div>
+
+  <h2>3) Registro de entradas</h2>
+  <div id="preview" class="">
+    <strong>Estado:</strong>
+    <div id="lastScan">—</div>
+  </div>
+
+  <div class="row" style="margin-top: 12px;">
+    <button id="btnExport">Exportar CSV</button>
+    <button id="btnClear" class="danger">Borrar registros locales</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha/Hora</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Empresa</th>
+        <th>Rol</th>
+        <th>Dispositivo</th>
+      </tr>
+    </thead>
+    <tbody id="logBody"></tbody>
+  </table>
+
+<script>
+  // ---------------- Diagnostics helpers ----------------
+  window.addEventListener("error", (e) => {
+    // Most common: CDN blocked / undefined libs
+    setStatus("Error JS: " + (e.message || "desconocido"), true);
+  });
+
+  function assertLibs() {
+    if (typeof QRCode === "undefined") {
+      setStatus("No cargó qrcode.min.js (CDN bloqueado / sin internet).", true);
+      return false;
+    }
+    if (typeof Html5Qrcode === "undefined") {
+      setStatus("No cargó html5-qrcode.min.js (CDN bloqueado / sin internet).", true);
+      return false;
+    }
+    return true;
+  }
+
+  // ---------------- Storage ----------------
+  const LS_KEY = "condo_entry_logs_v1";
+
+  function loadLogs() {
+    try { return JSON.parse(localStorage.getItem(LS_KEY) || "[]"); }
+    catch { return []; }
+  }
+
+  function saveLogs(logs) {
+    localStorage.setItem(LS_KEY, JSON.stringify(logs));
+  }
+
+  function nowISO() {
+    const d = new Date();
+    const pad = (n) => String(n).padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  }
+
+  function deviceLabel() {
+    return navigator.userAgent || "unknown";
+  }
+
+  // ---------------- UI ----------------
+  function escapeHtml(s) {
+    return String(s ?? "")
+      .replaceAll("&","&amp;").replaceAll("<","&lt;")
+      .replaceAll(">","&gt;").replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  function setStatus(text, isError=false, isOk=false) {
+    const el = document.getElementById("lastScan");
+    el.textContent = text;
+    const prev = document.getElementById("preview");
+    prev.className = isError ? "danger" : (isOk ? "ok" : "");
+  }
+
+  function renderTable() {
+    const logs = loadLogs();
+    const tb = document.getElementById("logBody");
+    tb.innerHTML = "";
+    for (const row of logs.slice().reverse()) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${escapeHtml(row.ts)}</td>
+        <td>${escapeHtml(row.id)}</td>
+        <td>${escapeHtml(row.nombre || "")}</td>
+        <td>${escapeHtml(row.empresa || "")}</td>
+        <td>${escapeHtml(row.rol || "")}</td>
+        <td>${escapeHtml(row.device || "")}</td>
+      `;
+      tb.appendChild(tr);
+    }
+  }
+
+  // ---------------- QR generation ----------------
+  document.getElementById("btnMakeQr").addEventListener("click", async () => {
+    if (!assertLibs()) return;
+
+    const id = document.getElementById("wid").value.trim();
+    const nombre = document.getElementById("wname").value.trim();
+    const empresa = document.getElementById("wcompany").value.trim();
+    const rol = document.getElementById("wrole").value.trim();
+
+    if (!id || !nombre) {
+      setStatus("Para generar QR: ID y Nombre son obligatorios.", true);
+      return;
+    }
+
+    const payload = { id, nombre, empresa, rol };
+    const json = JSON.stringify(payload);
+
+    document.getElementById("qrJson").value = json;
+
+    const wrap = document.getElementById("qrCanvasWrap");
+    wrap.innerHTML = "";
+    const canvas = document.createElement("canvas");
+    wrap.appendChild(canvas);
+
+    try {
+      await QRCode.toCanvas(canvas, json, { width: 240, margin: 2 });
+      setStatus("QR generado.", false, true);
+    } catch (err) {
+      setStatus("No se pudo generar QR: " + (err?.message || err), true);
+    }
+  });
+
+  // ---------------- QR scanning ----------------
+  let html5Qr = null;
+  let lastAcceptedAtMs = 0;
+  let camerasCache = [];
+
+  async function loadCameras() {
+    if (!assertLibs()) return [];
+    try {
+      camerasCache = await Html5Qrcode.getCameras();
+    } catch (err) {
+      setStatus("No se pudieron listar cámaras. Revisa permisos del navegador.", true);
+      camerasCache = [];
+    }
+    const sel = document.getElementById("cameraSelect");
+    // Keep first option, reset the rest
+    sel.querySelectorAll("option").forEach((opt, idx) => { if (idx !== 0) opt.remove(); });
+
+    for (const c of camerasCache) {
+      const opt = document.createElement("option");
+      opt.value = c.id;
+      opt.textContent = c.label || ("Cámara " + c.id.slice(0,6));
+      sel.appendChild(opt);
+    }
+    return camerasCache;
+  }
+
+  function chooseCameraId() {
+    const selVal = document.getElementById("cameraSelect").value;
+    if (selVal) return selVal;
+
+    // Prefer rear camera by label; fallback first
+    const backCam = camerasCache.find(c => /back|rear|environment/i.test(c.label));
+    return (backCam?.id) || (camerasCache[0]?.id) || "";
+  }
+
+  async function startScanner() {
+    if (!assertLibs()) return;
+
+    // Ensure HTTPS / secure context
+    if (!window.isSecureContext) {
+      setStatus("El escáner requiere un origen seguro (HTTPS). Abre desde Netlify/HTTPS.", true);
+      return;
+    }
+
+    if (html5Qr) {
+      setStatus("El escáner ya está iniciado.", false, true);
+      return;
+    }
+
+    await loadCameras();
+    const camId = chooseCameraId();
+    if (!camId) {
+      setStatus("No se detectó cámara disponible.", true);
+      return;
+    }
+
+    html5Qr = new Html5Qrcode("reader");
+    const config = { fps: 10, qrbox: { width: 240, height: 240 } };
+
+    const onScanSuccess = (decodedText) => {
+      const now = Date.now();
+      if (now - lastAcceptedAtMs < 1500) return; // cooldown
+      lastAcceptedAtMs = now;
+
+      let data;
+      try {
+        data = JSON.parse(decodedText);
+      } catch {
+        setStatus("QR inválido: no es JSON.", true);
+        return;
+      }
+
+      if (!data || typeof data !== "object" || !data.id) {
+        setStatus("QR inválido: falta campo 'id'.", true);
+        return;
+      }
+
+      const entry = {
+        ts: nowISO(),
+        id: String(data.id),
+        nombre: data.nombre || "",
+        empresa: data.empresa || "",
+        rol: data.rol || "",
+        device: deviceLabel(),
+      };
+
+      const logs = loadLogs();
+      logs.push(entry);
+      saveLogs(logs);
+
+      setStatus(`Registrado: ${entry.id} - ${entry.nombre} @ ${entry.ts}`, false, true);
+      renderTable();
+    };
+
+    try {
+      await html5Qr.start(
+        { deviceId: { exact: camId } },
+        config,
+        onScanSuccess,
+        () => {}
+      );
+      setStatus("Escáner iniciado.", false, true);
+    } catch (err) {
+      // Common: NotAllowedError / NotFoundError / OverconstrainedError
+      setStatus("No se pudo iniciar escáner: " + (err?.message || err), true);
+      await stopScanner(); // cleanup if partial start
+    }
+  }
+
+  async function stopScanner() {
+    if (!html5Qr) return;
+    try { await html5Qr.stop(); } catch {}
+    try { await html5Qr.clear(); } catch {}
+    html5Qr = null;
+    setStatus("Escáner detenido.");
+  }
+
+  document.getElementById("btnStart").addEventListener("click", () => startScanner());
+  document.getElementById("btnStop").addEventListener("click", () => stopScanner());
+
+  // Reload cameras when selector opened/changed (helpful on mobile)
+  document.getElementById("cameraSelect").addEventListener("click", () => loadCameras());
+  document.getElementById("cameraSelect").addEventListener("change", async () => {
+    // If running, restart with chosen cam
+    if (html5Qr) {
+      await stopScanner();
+      await startScanner();
+    }
+  });
+
+  // ---------------- Export CSV ----------------
+  document.getElementById("btnExport").addEventListener("click", () => {
+    const logs = loadLogs();
+    const header = ["ts","id","nombre","empresa","rol","device"];
+    const lines = [header.join(",")];
+
+    for (const r of logs) {
+      const row = header.map(k => csvCell(r[k]));
+      lines.push(row.join(","));
+    }
+
+    const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `entradas_${new Date().toISOString().slice(0,10)}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    URL.revokeObjectURL(url);
+  });
+
+  function csvCell(v) {
+    const s = String(v ?? "");
+    const escaped = s.replaceAll('"','""');
+    return `"${escaped}"`;
+  }
+
+  // ---------------- Clear logs ----------------
+  document.getElementById("btnClear").addEventListener("click", () => {
+    localStorage.removeItem(LS_KEY);
+    renderTable();
+    setStatus("Registros locales borrados.");
+  });
+
+  // Init
+  renderTable();
+  setStatus("Listo.");
+</script>
+</body>
+</html>
