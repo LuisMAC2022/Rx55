@@ -1,0 +1,1075 @@
+{
+  "layout": {
+    "cols": 5,
+    "rows": 10,
+    "name": "Dashboard Autolavado Condominios"
+  },
+  "cells": [
+    {
+      "row": 1,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E01",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Plata",
+          "plates": "CTB-2105"
+        },
+        "owner": {
+          "name": "Elena Vega",
+          "tower": "D",
+          "floor": 2,
+          "unit": "03",
+          "unitCode": "D-02-03",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E02",
+      "spot": {
+        "vehicle": {
+          "model": "Chevrolet Onix",
+          "color": "Negro",
+          "plates": "SMU-3293"
+        },
+        "owner": {
+          "name": "Elena Vega",
+          "tower": "D",
+          "floor": 7,
+          "unit": "02",
+          "unitCode": "D-07-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E03",
+      "spot": {
+        "vehicle": {
+          "model": "Mazda 3",
+          "color": "Negro",
+          "plates": "LSX-4558"
+        },
+        "owner": {
+          "name": "Adriana Fuentes",
+          "tower": "A",
+          "floor": 12,
+          "unit": "02",
+          "unitCode": "A-12-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E04",
+      "spot": {
+        "vehicle": {
+          "model": "Renault Kwid",
+          "color": "Verde",
+          "plates": "JCN-2005"
+        },
+        "owner": {
+          "name": "Javier Torres",
+          "tower": "A",
+          "floor": 1,
+          "unit": "02",
+          "unitCode": "A-01-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "cellType": "blocked"
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E05",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Blanco",
+          "plates": "QHA-8273"
+        },
+        "owner": {
+          "name": "Luis Martínez",
+          "tower": "B",
+          "floor": 7,
+          "unit": "03",
+          "unitCode": "B-07-03",
+          "hasPostalMail": true
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E06",
+      "spot": {
+        "vehicle": {
+          "model": "SEAT Ibiza",
+          "color": "Blanco",
+          "plates": "FFR-4159"
+        },
+        "owner": {
+          "name": "Adriana Fuentes",
+          "tower": "B",
+          "floor": 2,
+          "unit": "01",
+          "unitCode": "B-02-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E07",
+      "spot": {
+        "vehicle": {
+          "model": "SEAT Ibiza",
+          "color": "Negro",
+          "plates": "DUV-7247"
+        },
+        "owner": {
+          "name": "Paula Mendoza",
+          "tower": "C",
+          "floor": 5,
+          "unit": "04",
+          "unitCode": "C-05-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E08",
+      "spot": {
+        "vehicle": {
+          "model": "Nissan Versa",
+          "color": "Verde",
+          "plates": "YDH-1159"
+        },
+        "owner": {
+          "name": "Fernando Cruz",
+          "tower": "A",
+          "floor": 2,
+          "unit": "02",
+          "unitCode": "A-02-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E09",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Vino",
+          "plates": "JPA-8914"
+        },
+        "owner": {
+          "name": "Carlos Herrera",
+          "tower": "D",
+          "floor": 6,
+          "unit": "03",
+          "unitCode": "D-06-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E10",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Blanco",
+          "plates": "GEH-6937"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "D",
+          "floor": 7,
+          "unit": "03",
+          "unitCode": "D-07-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E11",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Verde",
+          "plates": "MWF-4711"
+        },
+        "owner": {
+          "name": "Camila Reyes",
+          "tower": "C",
+          "floor": 7,
+          "unit": "04",
+          "unitCode": "C-07-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E12",
+      "spot": {
+        "vehicle": {
+          "model": "Chevrolet Onix",
+          "color": "Verde",
+          "plates": "JJU-9815"
+        },
+        "owner": {
+          "name": "Rafael Soto",
+          "tower": "C",
+          "floor": 6,
+          "unit": "04",
+          "unitCode": "C-06-04",
+          "hasPostalMail": true
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E13",
+      "spot": {
+        "vehicle": {
+          "model": "Toyota Corolla",
+          "color": "Gris",
+          "plates": "WMJ-9480"
+        },
+        "owner": {
+          "name": "Paula Mendoza",
+          "tower": "A",
+          "floor": 4,
+          "unit": "01",
+          "unitCode": "A-04-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E14",
+      "spot": {
+        "vehicle": {
+          "model": "Chevrolet Onix",
+          "color": "Plata",
+          "plates": "XKJ-9491"
+        },
+        "owner": {
+          "name": "Sofía Gómez",
+          "tower": "C",
+          "floor": 6,
+          "unit": "03",
+          "unitCode": "C-06-03",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E15",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Rojo",
+          "plates": "VBC-8985"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "B",
+          "floor": 5,
+          "unit": "02",
+          "unitCode": "B-05-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E16",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Vino",
+          "plates": "DJC-5297"
+        },
+        "owner": {
+          "name": "Valeria Ortiz",
+          "tower": "B",
+          "floor": 2,
+          "unit": "04",
+          "unitCode": "B-02-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E17",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Verde",
+          "plates": "SGJ-1836"
+        },
+        "owner": {
+          "name": "Ana Ruiz",
+          "tower": "A",
+          "floor": 3,
+          "unit": "02",
+          "unitCode": "A-03-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E18",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Rojo",
+          "plates": "HGG-6595"
+        },
+        "owner": {
+          "name": "Carlos Herrera",
+          "tower": "B",
+          "floor": 6,
+          "unit": "01",
+          "unitCode": "B-06-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E19",
+      "spot": {
+        "vehicle": {
+          "model": "Chevrolet Onix",
+          "color": "Blanco",
+          "plates": "LQX-3807"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "A",
+          "floor": 7,
+          "unit": "01",
+          "unitCode": "A-07-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E20",
+      "spot": {
+        "vehicle": {
+          "model": "Mazda 3",
+          "color": "Azul",
+          "plates": "WLF-6320"
+        },
+        "owner": {
+          "name": "Fernando Cruz",
+          "tower": "B",
+          "floor": 2,
+          "unit": "02",
+          "unitCode": "B-02-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E21",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Gris",
+          "plates": "DNV-3239"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "C",
+          "floor": 5,
+          "unit": "01",
+          "unitCode": "C-05-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E22",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Verde",
+          "plates": "KDB-5254"
+        },
+        "owner": {
+          "name": "Sofía Gómez",
+          "tower": "C",
+          "floor": 6,
+          "unit": "01",
+          "unitCode": "C-06-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E23",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Blanco",
+          "plates": "LMJ-8646"
+        },
+        "owner": {
+          "name": "Hugo Estrada",
+          "tower": "C",
+          "floor": 3,
+          "unit": "02",
+          "unitCode": "C-03-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E24",
+      "spot": {
+        "vehicle": {
+          "model": "Honda Civic",
+          "color": "Gris",
+          "plates": "NEE-8535"
+        },
+        "owner": {
+          "name": "Elena Vega",
+          "tower": "A",
+          "floor": 7,
+          "unit": "02",
+          "unitCode": "A-07-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 6,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E25",
+      "spot": {
+        "vehicle": {
+          "model": "Toyota Corolla",
+          "color": "Gris",
+          "plates": "AHA-4614"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "A",
+          "floor": 9,
+          "unit": "01",
+          "unitCode": "A-09-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E26",
+      "spot": {
+        "vehicle": {
+          "model": "Renault Kwid",
+          "color": "Plata",
+          "plates": "SKG-9407"
+        },
+        "owner": {
+          "name": "Paula Mendoza",
+          "tower": "D",
+          "floor": 4,
+          "unit": "04",
+          "unitCode": "D-04-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 6,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E27",
+      "spot": {
+        "vehicle": {
+          "model": "Nissan Versa",
+          "color": "Plata",
+          "plates": "VPF-7659"
+        },
+        "owner": {
+          "name": "Fernando Cruz",
+          "tower": "B",
+          "floor": 3,
+          "unit": "03",
+          "unitCode": "B-03-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 6,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E28",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Negro",
+          "plates": "PWD-4124"
+        },
+        "owner": {
+          "name": "Diego Castillo",
+          "tower": "B",
+          "floor": 6,
+          "unit": "03",
+          "unitCode": "B-06-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 6,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E29",
+      "spot": {
+        "vehicle": {
+          "model": "Nissan Versa",
+          "color": "Negro",
+          "plates": "YYH-4768"
+        },
+        "owner": {
+          "name": "Fernando Cruz",
+          "tower": "D",
+          "floor": 5,
+          "unit": "02",
+          "unitCode": "D-05-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 7,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E30",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Gris",
+          "plates": "SFQ-4076"
+        },
+        "owner": {
+          "name": "Paula Mendoza",
+          "tower": "C",
+          "floor": 1,
+          "unit": "04",
+          "unitCode": "C-01-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E31",
+      "spot": {
+        "vehicle": {
+          "model": "Nissan Versa",
+          "color": "Azul",
+          "plates": "RCX-9530"
+        },
+        "owner": {
+          "name": "Miguel Ramos",
+          "tower": "C",
+          "floor": 3,
+          "unit": "03",
+          "unitCode": "C-03-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 7,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E32",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Azul",
+          "plates": "URW-4030"
+        },
+        "owner": {
+          "name": "Lucía Navarro",
+          "tower": "D",
+          "floor": 6,
+          "unit": "04",
+          "unitCode": "D-06-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 7,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E33",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Verde",
+          "plates": "WCR-9607"
+        },
+        "owner": {
+          "name": "Luis Martínez",
+          "tower": "A",
+          "floor": 3,
+          "unit": "01",
+          "unitCode": "A-03-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 7,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E34",
+      "spot": {
+        "vehicle": {
+          "model": "Hyundai Elantra",
+          "color": "Verde",
+          "plates": "HGU-8080"
+        },
+        "owner": {
+          "name": "Elena Vega",
+          "tower": "D",
+          "floor": 1,
+          "unit": "03",
+          "unitCode": "D-01-03",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 8,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E35",
+      "spot": {
+        "vehicle": {
+          "model": "Renault Kwid",
+          "color": "Blanco",
+          "plates": "ZQA-5099"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "B",
+          "floor": 1,
+          "unit": "01",
+          "unitCode": "B-01-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 8,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E36",
+      "spot": {
+        "vehicle": {
+          "model": "SEAT Ibiza",
+          "color": "Plata",
+          "plates": "DXR-2267"
+        },
+        "owner": {
+          "name": "Sofía Gómez",
+          "tower": "A",
+          "floor": 11,
+          "unit": "02",
+          "unitCode": "A-11-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 8,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E37",
+      "spot": {
+        "vehicle": {
+          "model": "Toyota Corolla",
+          "color": "Blanco",
+          "plates": "QKE-8552"
+        },
+        "owner": {
+          "name": "María López",
+          "tower": "C",
+          "floor": 4,
+          "unit": "02",
+          "unitCode": "C-04-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 8,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E38",
+      "spot": {
+        "vehicle": {
+          "model": "Hyundai Elantra",
+          "color": "Blanco",
+          "plates": "PEF-8291"
+        },
+        "owner": {
+          "name": "Paula Mendoza",
+          "tower": "C",
+          "floor": 3,
+          "unit": "04",
+          "unitCode": "C-03-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 8,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E39",
+      "spot": {
+        "vehicle": {
+          "model": "Nissan Versa",
+          "color": "Plata",
+          "plates": "KKZ-9310"
+        },
+        "owner": {
+          "name": "Rafael Soto",
+          "tower": "C",
+          "floor": 2,
+          "unit": "02",
+          "unitCode": "C-02-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 9,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E40",
+      "spot": {
+        "vehicle": {
+          "model": "Renault Kwid",
+          "color": "Negro",
+          "plates": "QDZ-5019"
+        },
+        "owner": {
+          "name": "Fernando Cruz",
+          "tower": "A",
+          "floor": 5,
+          "unit": "01",
+          "unitCode": "A-05-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 9,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E41",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Blanco",
+          "plates": "BPE-9348"
+        },
+        "owner": {
+          "name": "Lucía Navarro",
+          "tower": "B",
+          "floor": 3,
+          "unit": "01",
+          "unitCode": "B-03-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 9,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E42",
+      "spot": {
+        "vehicle": {
+          "model": "Hyundai Elantra",
+          "color": "Azul",
+          "plates": "ZVN-2189"
+        },
+        "owner": {
+          "name": "Hugo Estrada",
+          "tower": "B",
+          "floor": 7,
+          "unit": "02",
+          "unitCode": "B-07-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 9,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E43",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Gris",
+          "plates": "QGC-7194"
+        },
+        "owner": {
+          "name": "Daniela Rivas",
+          "tower": "B",
+          "floor": 6,
+          "unit": "04",
+          "unitCode": "B-06-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 9,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E44",
+      "spot": {
+        "vehicle": {
+          "model": "Volkswagen Jetta",
+          "color": "Plata",
+          "plates": "CRJ-4920"
+        },
+        "owner": {
+          "name": "Camila Reyes",
+          "tower": "C",
+          "floor": 2,
+          "unit": "03",
+          "unitCode": "C-02-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 10,
+      "col": 1,
+      "cellType": "empty"
+    },
+    {
+      "row": 10,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E45",
+      "spot": {
+        "vehicle": {
+          "model": "Hyundai Elantra",
+          "color": "Verde",
+          "plates": "YSB-2370"
+        },
+        "owner": {
+          "name": "Elena Vega",
+          "tower": "B",
+          "floor": 6,
+          "unit": "02",
+          "unitCode": "B-06-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 10,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E46",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Rojo",
+          "plates": "LQK-7807"
+        },
+        "owner": {
+          "name": "Daniela Rivas",
+          "tower": "B",
+          "floor": 1,
+          "unit": "02",
+          "unitCode": "B-01-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 10,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E47",
+      "spot": {
+        "vehicle": {
+          "model": "Kia Rio",
+          "color": "Azul",
+          "plates": "QYV-4887"
+        },
+        "owner": {
+          "name": "Fernando Cruz",
+          "tower": "A",
+          "floor": 13,
+          "unit": "01",
+          "unitCode": "A-13-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 10,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E48",
+      "spot": {
+        "vehicle": {
+          "model": "SEAT Ibiza",
+          "color": "Negro",
+          "plates": "EMP-2573"
+        },
+        "owner": {
+          "name": "Santiago Molina",
+          "tower": "D",
+          "floor": 3,
+          "unit": "03",
+          "unitCode": "D-03-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    }
+  ]
+}
