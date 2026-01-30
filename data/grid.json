@@ -1,0 +1,1075 @@
+{
+  "layout": {
+    "cols": 5,
+    "rows": 10,
+    "name": "Dashboard Autolavado Condominios"
+  },
+  "cells": [
+    {
+      "row": 1,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E01",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Azul",
+          "plates": "BV-255"
+        },
+        "owner": {
+          "name": "Carlos Méndez",
+          "tower": "D",
+          "floor": 4,
+          "unit": "04",
+          "unitCode": "D-04-04",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E02",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Blanco",
+          "plates": "UR-521"
+        },
+        "owner": {
+          "name": "Lucía Herrera",
+          "tower": "D",
+          "floor": 4,
+          "unit": "01",
+          "unitCode": "D-04-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E03",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Blanco",
+          "plates": "NU-002"
+        },
+        "owner": {
+          "name": "María Santos",
+          "tower": "A",
+          "floor": 10,
+          "unit": "01",
+          "unitCode": "A-10-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E04",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Plata",
+          "plates": "UP-028"
+        },
+        "owner": {
+          "name": "Diego Ruiz",
+          "tower": "B",
+          "floor": 2,
+          "unit": "04",
+          "unitCode": "B-02-04",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "cellType": "blocked"
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E05",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Plata",
+          "plates": "TJ-934"
+        },
+        "owner": {
+          "name": "Valeria Ortiz",
+          "tower": "B",
+          "floor": 7,
+          "unit": "04",
+          "unitCode": "B-07-04",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E06",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Azul",
+          "plates": "VL-053"
+        },
+        "owner": {
+          "name": "Jorge Peña",
+          "tower": "B",
+          "floor": 1,
+          "unit": "03",
+          "unitCode": "B-01-03",
+          "hasPostalMail": true
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E07",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Plata",
+          "plates": "HF-718"
+        },
+        "owner": {
+          "name": "Camila Navarro",
+          "tower": "B",
+          "floor": 4,
+          "unit": "01",
+          "unitCode": "B-04-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E08",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Gris",
+          "plates": "RZ-264"
+        },
+        "owner": {
+          "name": "Sofía Díaz",
+          "tower": "A",
+          "floor": 12,
+          "unit": "02",
+          "unitCode": "A-12-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E09",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Plata",
+          "plates": "AB-022"
+        },
+        "owner": {
+          "name": "Andrés Vega",
+          "tower": "C",
+          "floor": 4,
+          "unit": "02",
+          "unitCode": "C-04-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E10",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Blanco",
+          "plates": "WV-326"
+        },
+        "owner": {
+          "name": "Ana López",
+          "tower": "C",
+          "floor": 6,
+          "unit": "02",
+          "unitCode": "C-06-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E11",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Rojo",
+          "plates": "LN-509"
+        },
+        "owner": {
+          "name": "Carlos Méndez",
+          "tower": "C",
+          "floor": 2,
+          "unit": "01",
+          "unitCode": "C-02-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E12",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Negro",
+          "plates": "DP-906"
+        },
+        "owner": {
+          "name": "Lucía Herrera",
+          "tower": "A",
+          "floor": 11,
+          "unit": "02",
+          "unitCode": "A-11-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E13",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Plata",
+          "plates": "GH-849"
+        },
+        "owner": {
+          "name": "María Santos",
+          "tower": "C",
+          "floor": 5,
+          "unit": "04",
+          "unitCode": "C-05-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E14",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Plata",
+          "plates": "DA-672"
+        },
+        "owner": {
+          "name": "Diego Ruiz",
+          "tower": "C",
+          "floor": 3,
+          "unit": "04",
+          "unitCode": "C-03-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E15",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Rojo",
+          "plates": "DB-707"
+        },
+        "owner": {
+          "name": "Valeria Ortiz",
+          "tower": "D",
+          "floor": 4,
+          "unit": "02",
+          "unitCode": "D-04-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E16",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Plata",
+          "plates": "PT-290"
+        },
+        "owner": {
+          "name": "Jorge Peña",
+          "tower": "A",
+          "floor": 4,
+          "unit": "01",
+          "unitCode": "A-04-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E17",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Rojo",
+          "plates": "VK-751"
+        },
+        "owner": {
+          "name": "Camila Navarro",
+          "tower": "C",
+          "floor": 1,
+          "unit": "03",
+          "unitCode": "C-01-03",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E18",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Azul",
+          "plates": "CK-426"
+        },
+        "owner": {
+          "name": "Sofía Díaz",
+          "tower": "A",
+          "floor": 3,
+          "unit": "02",
+          "unitCode": "A-03-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E19",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Azul",
+          "plates": "WB-646"
+        },
+        "owner": {
+          "name": "Andrés Vega",
+          "tower": "C",
+          "floor": 5,
+          "unit": "02",
+          "unitCode": "C-05-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E20",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Plata",
+          "plates": "JT-747"
+        },
+        "owner": {
+          "name": "Ana López",
+          "tower": "D",
+          "floor": 6,
+          "unit": "02",
+          "unitCode": "D-06-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E21",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Gris",
+          "plates": "ZS-061"
+        },
+        "owner": {
+          "name": "Carlos Méndez",
+          "tower": "D",
+          "floor": 2,
+          "unit": "01",
+          "unitCode": "D-02-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E22",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Rojo",
+          "plates": "AH-920"
+        },
+        "owner": {
+          "name": "Lucía Herrera",
+          "tower": "D",
+          "floor": 6,
+          "unit": "01",
+          "unitCode": "D-06-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E23",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Negro",
+          "plates": "WY-659"
+        },
+        "owner": {
+          "name": "María Santos",
+          "tower": "C",
+          "floor": 6,
+          "unit": "04",
+          "unitCode": "C-06-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E24",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Azul",
+          "plates": "UX-612"
+        },
+        "owner": {
+          "name": "Diego Ruiz",
+          "tower": "D",
+          "floor": 3,
+          "unit": "01",
+          "unitCode": "D-03-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 6,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E25",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Plata",
+          "plates": "CM-111"
+        },
+        "owner": {
+          "name": "Valeria Ortiz",
+          "tower": "A",
+          "floor": 11,
+          "unit": "01",
+          "unitCode": "A-11-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E26",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Rojo",
+          "plates": "FB-489"
+        },
+        "owner": {
+          "name": "Jorge Peña",
+          "tower": "C",
+          "floor": 4,
+          "unit": "01",
+          "unitCode": "C-04-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 6,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E27",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Azul",
+          "plates": "LZ-080"
+        },
+        "owner": {
+          "name": "Camila Navarro",
+          "tower": "B",
+          "floor": 5,
+          "unit": "02",
+          "unitCode": "B-05-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 6,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E28",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Rojo",
+          "plates": "CP-218"
+        },
+        "owner": {
+          "name": "Sofía Díaz",
+          "tower": "C",
+          "floor": 3,
+          "unit": "01",
+          "unitCode": "C-03-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 0
+      }
+    },
+    {
+      "row": 6,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E29",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Azul",
+          "plates": "ND-235"
+        },
+        "owner": {
+          "name": "Andrés Vega",
+          "tower": "B",
+          "floor": 1,
+          "unit": "02",
+          "unitCode": "B-01-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 7,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E30",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Rojo",
+          "plates": "BA-465"
+        },
+        "owner": {
+          "name": "Ana López",
+          "tower": "D",
+          "floor": 7,
+          "unit": "01",
+          "unitCode": "D-07-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E31",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Plata",
+          "plates": "BP-241"
+        },
+        "owner": {
+          "name": "Carlos Méndez",
+          "tower": "A",
+          "floor": 3,
+          "unit": "01",
+          "unitCode": "A-03-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 7,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E32",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Gris",
+          "plates": "VC-897"
+        },
+        "owner": {
+          "name": "Lucía Herrera",
+          "tower": "C",
+          "floor": 7,
+          "unit": "01",
+          "unitCode": "C-07-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 7,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E33",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Blanco",
+          "plates": "RZ-766"
+        },
+        "owner": {
+          "name": "María Santos",
+          "tower": "A",
+          "floor": 6,
+          "unit": "02",
+          "unitCode": "A-06-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 7,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E34",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Negro",
+          "plates": "XM-182"
+        },
+        "owner": {
+          "name": "Diego Ruiz",
+          "tower": "B",
+          "floor": 6,
+          "unit": "02",
+          "unitCode": "B-06-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 8,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E35",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Gris",
+          "plates": "YA-476"
+        },
+        "owner": {
+          "name": "Valeria Ortiz",
+          "tower": "B",
+          "floor": 6,
+          "unit": "03",
+          "unitCode": "B-06-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 8,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E36",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Gris",
+          "plates": "BW-984"
+        },
+        "owner": {
+          "name": "Jorge Peña",
+          "tower": "C",
+          "floor": 7,
+          "unit": "04",
+          "unitCode": "C-07-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 8,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E37",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Azul",
+          "plates": "RH-039"
+        },
+        "owner": {
+          "name": "Camila Navarro",
+          "tower": "B",
+          "floor": 7,
+          "unit": "01",
+          "unitCode": "B-07-01",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 8,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E38",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Gris",
+          "plates": "ZV-972"
+        },
+        "owner": {
+          "name": "Sofía Díaz",
+          "tower": "B",
+          "floor": 6,
+          "unit": "01",
+          "unitCode": "B-06-01",
+          "hasPostalMail": true
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 8,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E39",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Negro",
+          "plates": "KR-120"
+        },
+        "owner": {
+          "name": "Andrés Vega",
+          "tower": "D",
+          "floor": 6,
+          "unit": "04",
+          "unitCode": "D-06-04",
+          "hasPostalMail": true
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 9,
+      "col": 1,
+      "cellType": "spot",
+      "spotLabel": "E40",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Gris",
+          "plates": "HB-812"
+        },
+        "owner": {
+          "name": "Ana López",
+          "tower": "A",
+          "floor": 7,
+          "unit": "02",
+          "unitCode": "A-07-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 9,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E41",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Azul",
+          "plates": "ZN-385"
+        },
+        "owner": {
+          "name": "Carlos Méndez",
+          "tower": "D",
+          "floor": 7,
+          "unit": "04",
+          "unitCode": "D-07-04",
+          "hasPostalMail": true
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 9,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E42",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Gris",
+          "plates": "TH-171"
+        },
+        "owner": {
+          "name": "Lucía Herrera",
+          "tower": "A",
+          "floor": 4,
+          "unit": "02",
+          "unitCode": "A-04-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 5
+      }
+    },
+    {
+      "row": 9,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E43",
+      "spot": {
+        "vehicle": {
+          "model": "SUV",
+          "color": "Plata",
+          "plates": "XU-503"
+        },
+        "owner": {
+          "name": "María Santos",
+          "tower": "C",
+          "floor": 7,
+          "unit": "02",
+          "unitCode": "C-07-02",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 9,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E44",
+      "spot": {
+        "vehicle": {
+          "model": "Hatchback",
+          "color": "Negro",
+          "plates": "WD-714"
+        },
+        "owner": {
+          "name": "Diego Ruiz",
+          "tower": "D",
+          "floor": 5,
+          "unit": "04",
+          "unitCode": "D-05-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 3
+      }
+    },
+    {
+      "row": 10,
+      "col": 1,
+      "cellType": "empty"
+    },
+    {
+      "row": 10,
+      "col": 2,
+      "cellType": "spot",
+      "spotLabel": "E45",
+      "spot": {
+        "vehicle": {
+          "model": "Pickup",
+          "color": "Negro",
+          "plates": "YY-139"
+        },
+        "owner": {
+          "name": "Valeria Ortiz",
+          "tower": "B",
+          "floor": 4,
+          "unit": "04",
+          "unitCode": "B-04-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 4
+      }
+    },
+    {
+      "row": 10,
+      "col": 3,
+      "cellType": "spot",
+      "spotLabel": "E46",
+      "spot": {
+        "vehicle": {
+          "model": "Coupé",
+          "color": "Plata",
+          "plates": "KH-110"
+        },
+        "owner": {
+          "name": "Jorge Peña",
+          "tower": "B",
+          "floor": 3,
+          "unit": "03",
+          "unitCode": "B-03-03",
+          "hasPostalMail": false
+        },
+        "packagesPending": 1
+      }
+    },
+    {
+      "row": 10,
+      "col": 4,
+      "cellType": "spot",
+      "spotLabel": "E47",
+      "spot": {
+        "vehicle": {
+          "model": "Minivan",
+          "color": "Plata",
+          "plates": "ST-960"
+        },
+        "owner": {
+          "name": "Camila Navarro",
+          "tower": "B",
+          "floor": 5,
+          "unit": "04",
+          "unitCode": "B-05-04",
+          "hasPostalMail": false
+        },
+        "packagesPending": 2
+      }
+    },
+    {
+      "row": 10,
+      "col": 5,
+      "cellType": "spot",
+      "spotLabel": "E48",
+      "spot": {
+        "vehicle": {
+          "model": "Sedán",
+          "color": "Azul",
+          "plates": "AL-024"
+        },
+        "owner": {
+          "name": "Sofía Díaz",
+          "tower": "A",
+          "floor": 8,
+          "unit": "02",
+          "unitCode": "A-08-02",
+          "hasPostalMail": true
+        },
+        "packagesPending": 2
+      }
+    }
+  ]
+}
