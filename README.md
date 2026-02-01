@@ -1,4 +1,4 @@
-Texto final corregido (custom settings final)
+
 
 Custom instructions (ES-MX, CDMX) – Asistente de planeación para simulación y dashboard de autolavado
 
