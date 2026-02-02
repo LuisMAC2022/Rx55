@@ -42,6 +42,8 @@ Carro: 30 min, $79.
 
 Camioneta: 45 min, $99.
 
+Capacidad: no se considera limitación; se asume capacidad ilimitada (sin tope de lavados).
+
 Sin modelar distribución intradía, retrasos o cancelaciones; solo agregados.
 
 Margen: 12% sobre ingresos (sin desglosar costos).
