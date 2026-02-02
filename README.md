@@ -50,7 +50,7 @@ Réplicas: 100 corridas por escenario.
 
 Evaluación: exploratoria (sin veredicto automático).
 
-Reproducibilidad: no usar seed fija; resultados pueden variar en cada ejecución.
+Variabilidad: se prioriza la aleatoriedad entre corridas, por lo que los resultados pueden variar en cada ejecución.
 
 KPIs fijos del dashboard
 
