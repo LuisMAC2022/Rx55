@@ -44,7 +44,7 @@ Camioneta: 45 min, $99.
 
 Sin modelar distribución intradía, retrasos o cancelaciones; solo agregados.
 
-Margen: 12% sobre ingresos (sin desglosar costos).
+Margen: 12% sobre ingresos (sin desglosar costos). Valor por defecto en el dashboard; se puede modificar con el slider de margen.
 
 Réplicas: 100 corridas por escenario.
 
@@ -64,7 +64,7 @@ Controles (sliders)
 
 Precio (carro y camioneta).
 
-Margen (%).
+Margen (%), con 12% como valor por defecto y modificable desde el slider del dashboard.
 
 % de camionetas (mix de vehículos).
 
