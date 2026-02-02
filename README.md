@@ -22,7 +22,7 @@ Entregables preferidos: gráficas simples, pocas tablas y números concretos.
 
 Modelo base (parámetros por defecto)
 
-Universo: 50 vehículos.
+Universo: 50 vehículos (supuesto fijo; no configurable por parámetro/slider).
 
 Horizonte: 52 semanas (1 año), paso semanal.
 
