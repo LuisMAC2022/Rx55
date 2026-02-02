@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Autolavado MVP — Escenarios y métricas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <nav aria-label="Accesos rápidos">
+      <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    </nav>
+
+    <header class="site-header">
+      <p class="eyebrow">MVP Autolavado</p>
+      <h1>Simulación y dashboard exploratorio</h1>
+      <p class="subtitle">
+        Configura precios, margen y mezcla de vehículos. Guarda hasta 10 escenarios y compara
+        resultados agregados sin usar librerías externas.
+      </p>
+    </header>
+
+    <main id="contenido" class="layout">
+      <section class="panel" aria-labelledby="controles-title">
+        <header class="panel-header">
+          <h2 id="controles-title">Controles del escenario</h2>
+          <p class="panel-help">
+            Ajusta los parámetros base. Los cambios se guardan en el escenario activo.
+          </p>
+        </header>
+
+        <form class="controls" aria-describedby="controls-help">
+          <p id="controls-help" class="sr-only">
+            Usa los controles para cambiar precios, margen y mezcla. Los valores están en pesos y
+            porcentajes.
+          </p>
+
+          <div class="control-group">
+            <label for="price-carro">Precio por carro (MXN)</label>
+            <div class="control-row">
+              <input
+                type="range"
+                id="price-carro"
+                name="price-carro"
+                min="50"
+                max="150"
+                step="1"
+              />
+              <input type="number" id="price-carro-number" min="50" max="150" step="1" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="price-camioneta">Precio por camioneta (MXN)</label>
+            <div class="control-row">
+              <input
+                type="range"
+                id="price-camioneta"
+                name="price-camioneta"
+                min="60"
+                max="180"
+                step="1"
+              />
+              <input type="number" id="price-camioneta-number" min="60" max="180" step="1" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="mix-truck">% de camionetas</label>
+            <div class="control-row">
+              <input type="range" id="mix-truck" name="mix-truck" min="0" max="1" step="0.01" />
+              <input type="number" id="mix-truck-number" min="0" max="1" step="0.01" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="margin-pct">Margen estimado</label>
+            <div class="control-row">
+              <input type="range" id="margin-pct" name="margin-pct" min="0" max="1" step="0.01" />
+              <input type="number" id="margin-pct-number" min="0" max="1" step="0.01" />
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="escenarios-title">
+        <header class="panel-header">
+          <h2 id="escenarios-title">Escenarios guardados</h2>
+          <p class="panel-help">Guarda hasta 10 escenarios y carga el que necesites.</p>
+        </header>
+
+        <form class="scenario-form" id="scenario-form">
+          <div class="control-group">
+            <label for="scenario-name">Nombre del escenario</label>
+            <input
+              type="text"
+              id="scenario-name"
+              name="scenario-name"
+              maxlength="60"
+              placeholder="Ej. Precios base Q1"
+              required
+            />
+          </div>
+          <div class="control-group">
+            <label for="scenario-date">Fecha</label>
+            <input type="date" id="scenario-date" name="scenario-date" required />
+          </div>
+          <div class="button-row">
+            <button type="submit">Guardar escenario</button>
+            <button type="button" id="export-json">Exportar JSON</button>
+            <label class="button-inline" for="import-json">
+              Importar JSON
+              <input type="file" id="import-json" accept="application/json" />
+            </label>
+          </div>
+        </form>
+
+        <p class="status" aria-live="polite" id="status-message"></p>
+
+        <ul class="scenario-list" id="scenario-list"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="resultados-title">
+        <header class="panel-header">
+          <h2 id="resultados-title">Resultados y métricas</h2>
+          <p class="panel-help">
+            Promedios y percentiles (p10/p90) calculados con 100 réplicas.
+          </p>
+        </header>
+
+        <section class="kpis" aria-label="Indicadores principales">
+          <article class="kpi">
+            <h3>Ingreso acumulado</h3>
+            <p class="kpi-value" id="kpi-revenue">$0</p>
+            <p class="kpi-meta" id="kpi-revenue-range">p10 $0 · p90 $0</p>
+          </article>
+          <article class="kpi">
+            <h3>Lavados acumulados</h3>
+            <p class="kpi-value" id="kpi-washes">0</p>
+            <p class="kpi-meta" id="kpi-washes-range">p10 0 · p90 0</p>
+          </article>
+          <article class="kpi">
+            <h3>Margen estimado</h3>
+            <p class="kpi-value" id="kpi-margin">$0</p>
+            <p class="kpi-meta" id="kpi-margin-range">p10 $0 · p90 $0</p>
+          </article>
+          <article class="kpi">
+            <h3>Lavados por tipo</h3>
+            <p class="kpi-value" id="kpi-type">Carro 0 · Camioneta 0</p>
+            <p class="kpi-meta" id="kpi-type-range">p10/p90 incluidos</p>
+          </article>
+        </section>
+
+        <div class="charts">
+          <figure class="chart" aria-labelledby="chart-washes-title" aria-describedby="chart-washes-desc">
+            <figcaption id="chart-washes-title">Lavados mensuales (promedio)</figcaption>
+            <p id="chart-washes-desc" class="chart-desc">
+              Barras por mes con resumen textual accesible.
+            </p>
+            <div class="chart-summary" id="chart-washes-summary"></div>
+            <ol class="bar-chart" id="chart-washes"></ol>
+          </figure>
+
+          <figure class="chart" aria-labelledby="chart-revenue-title" aria-describedby="chart-revenue-desc">
+            <figcaption id="chart-revenue-title">Ingresos mensuales (promedio)</figcaption>
+            <p id="chart-revenue-desc" class="chart-desc">
+              Barras por mes con resumen textual accesible.
+            </p>
+            <div class="chart-summary" id="chart-revenue-summary"></div>
+            <ol class="bar-chart" id="chart-revenue"></ol>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Versión MVP Fase 3 — simulación exploratoria sin dependencias externas.</p>
+    </footer>
+  </body>
+</html>
