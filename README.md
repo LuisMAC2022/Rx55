@@ -38,11 +38,12 @@ P(camioneta)=0.35, P(carro)=0.65.
 
 Servicio único:
 
-Carro: 30 min, $79.
+Carro: 30 min, $79. (Tiempos informativos; no afectan el cálculo semanal.)
 
-Camioneta: 45 min, $99.
+Camioneta: 45 min, $99. (Tiempos informativos; no afectan el cálculo semanal.)
 
 Sin modelar distribución intradía, retrasos o cancelaciones; solo agregados.
+Los tiempos de servicio se presentan como referencia y no se usan para limitar capacidad.
 
 Margen: 12% sobre ingresos (sin desglosar costos).
 
