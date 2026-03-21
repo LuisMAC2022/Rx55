@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Evaluación ejecutiva de riesgos en red, cámaras, registros y apps de acceso remoto, con acciones concretas de mitigación." />
-  <title>Evaluación Ejecutiva de Riesgos y Acciones Prioritarias</title>
+  <meta name="description" content="Resumen ejecutivo de riesgos y plan de aseguramiento para red, registros y acceso por app predeterminada." />
+  <title>Resumen Ejecutivo de Riesgos y Plan de Aseguramiento</title>
   <style>
     :root {
       --bg: #f4f7fb;
@@ -320,57 +320,57 @@
   <main id="contenido-principal" class="wrap">
     <nav class="tabs" aria-label="Secciones del informe">
       <button class="tab-btn" id="tab-btn-1" type="button" role="tab" aria-selected="true" aria-controls="tab1" data-tab="tab1">
-        1. Red y cámaras
+        1. Riesgo general
       </button>
       <button class="tab-btn" id="tab-btn-2" type="button" role="tab" aria-selected="false" aria-controls="tab2" data-tab="tab2" tabindex="-1">
-        2. Registros y monitoreo
+        2. Falta de logs
       </button>
       <button class="tab-btn" id="tab-btn-3" type="button" role="tab" aria-selected="false" aria-controls="tab3" data-tab="tab3" tabindex="-1">
-        3. Acceso remoto por app
+        3. App predeterminada
       </button>
     </nav>
 
     <section id="tab1" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-1">
       <header class="hero">
-        <h1>Evaluación Ejecutiva de Riesgos y Acciones Prioritarias</h1>
-        <span class="tab-title">Red y cámaras</span>
+        <h1>Resumen Ejecutivo de Riesgo y Plan de Aseguramiento</h1>
+        <span class="tab-title">Análisis 1</span>
         <p>
-          La exposición actual no depende de un único elemento. El problema surge por la combinación de servicios abiertos a internet, credenciales predeterminadas y la convivencia de cámaras con dispositivos de uso personal en la misma red.
+          La red presenta alta exposición por apertura a internet, credenciales por defecto y uso compartido entre cámaras y dispositivos personales. El riesgo no es el WiFi en sí, sino la combinación que permite acceso no autorizado y movimiento lateral.
         </p>
         <p>
-          Esta configuración crea una ruta potencial de acceso desde internet al router, del router a la cámara y, desde ahí, al resto de la red interna. Eso eleva el riesgo operativo y dificulta contener un incidente.
+          Existe un posible acceso desde internet al router, del router a la cámara y de ahí a la red interna.
         </p>
       </header>
 
       <section>
-        <h2>Hallazgos clave</h2>
+        <h2>Síntesis del análisis</h2>
         <div class="grid">
           <article class="card">
-            <h3>Problema principal</h3>
-            <p>UPnP activo, puertos abiertos y credenciales por defecto mantienen expuestos servicios que deberían estar restringidos.</p>
-            <span class="pill high">Prioridad inmediata</span>
+            <h3>Vector de exposición</h3>
+            <p>UPnP activo, puertos abiertos, WiFi y credenciales por defecto exponen la red.</p>
+            <span class="pill high">Exposición alta</span>
           </article>
           <article class="card">
-            <h3>Por qué importa</h3>
-            <p>Un tercero podría obtener acceso remoto o local no autorizado con técnicas básicas o configuraciones automatizadas.</p>
-            <span class="pill high">Impacto alto</span>
+            <h3>Nivel de riesgo</h3>
+            <p>Riesgo alto–crítico por acceso remoto y local no autorizado.</p>
+            <span class="pill high">Riesgo alto–crítico</span>
           </article>
           <article class="card">
-            <h3>Impacto probable</h3>
-            <p>Si una cámara se compromete, puede utilizarse como punto de entrada para revisar, alcanzar o afectar otros equipos de la red.</p>
-            <span class="pill high">Contención prioritaria</span>
+            <h3>Vector de traslado</h3>
+            <p>La cámara en la misma red permite acceso a otros dispositivos si se compromete.</p>
+            <span class="pill high">Traslado muy alto</span>
           </article>
         </div>
       </section>
 
       <section>
-        <h2>Riesgo e impacto</h2>
+        <h2>Diagnóstico consolidado</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Factor</th>
               <th scope="col">Estado actual</th>
-              <th scope="col">Por qué importa</th>
+              <th scope="col">Implicación</th>
               <th scope="col">Nivel</th>
             </tr>
           </thead>
@@ -378,43 +378,43 @@
             <tr>
               <td>UPnP</td>
               <td>Activado</td>
-              <td>Puede publicar servicios internos sin una revisión explícita.</td>
+              <td>Abre puertos automáticamente y expone la red.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
             <tr>
               <td>Puertos abiertos</td>
               <td>Sí</td>
-              <td>Dejan disponibles desde internet servicios que deberían quedar internos.</td>
+              <td>Permiten acceso remoto a servicios internos.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
             <tr>
               <td>DMZ</td>
               <td>No</td>
-              <td>No es el foco principal en el estado actual.</td>
+              <td>Sin impacto relevante actual.</td>
               <td><span class="badge safe">Bajo</span></td>
             </tr>
             <tr>
               <td>WiFi</td>
               <td>Por defecto</td>
-              <td>Facilita accesos cercanos cuando se mantienen claves o nombres previsibles.</td>
+              <td>Facilita accesos cercanos por credenciales previsibles.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
             <tr>
               <td>Cámara</td>
               <td>Credenciales por defecto</td>
-              <td>Facilita la toma de control del dispositivo con intentos básicos.</td>
+              <td>Permite control con ataques básicos.</td>
               <td><span class="badge danger">Alto</span></td>
             </tr>
             <tr>
               <td>Segmentación</td>
               <td>No existe</td>
-              <td>Aumenta la posibilidad de que un incidente se extienda al resto del entorno.</td>
+              <td>Permite movimiento lateral hacia otros dispositivos.</td>
               <td><span class="badge danger">Muy alto</span></td>
             </tr>
             <tr>
               <td>Acceso físico</td>
               <td>Disponible</td>
-              <td>Requiere controles físicos básicos para evitar cambios no autorizados.</td>
+              <td>Permite manipulación directa.</td>
               <td><span class="badge warning">Medio</span></td>
             </tr>
           </tbody>
@@ -422,14 +422,14 @@
       </section>
 
       <section>
-        <h2>Recomendación concreta</h2>
+        <h2>Plan de aseguramiento (1 semana)</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Fase</th>
               <th scope="col">Objetivo</th>
               <th scope="col">Acciones principales</th>
-              <th scope="col">Qué corrige</th>
+              <th scope="col">Problema que resuelve</th>
               <th scope="col">Tiempo</th>
               <th scope="col">Resultado esperado</th>
             </tr>
@@ -446,7 +446,7 @@
                   <li>Cambiar nombre y contraseña WiFi</li>
                 </ul>
               </td>
-              <td>Cierra las vías de acceso más evidentes en el corto plazo.</td>
+              <td>Reduce accesos remotos y locales inmediatos.</td>
               <td>2–4 horas totales</td>
               <td><span class="badge warning">Exposición controlada</span></td>
             </tr>
@@ -461,7 +461,7 @@
                   <li>Desactivar WPS</li>
                 </ul>
               </td>
-              <td>Reduce el uso indebido de dispositivos por configuración insegura.</td>
+              <td>Evita toma de control por configuraciones débiles.</td>
               <td>3–6 horas totales</td>
               <td><span class="badge warning">Dispositivos endurecidos</span></td>
             </tr>
@@ -476,7 +476,7 @@
                   <li>Documentar configuraciones</li>
                 </ul>
               </td>
-              <td>Separa entornos y limita la propagación de un incidente.</td>
+              <td>Limita movimiento lateral y sostiene el control.</td>
               <td>4–8 horas totales</td>
               <td><span class="badge safe">Entorno controlado</span></td>
             </tr>
@@ -485,54 +485,54 @@
       </section>
 
       <section>
-        <h2>Resultado esperado</h2>
+        <h2>Conclusión ejecutiva</h2>
         <div class="footer-note">
-          No se requiere nueva infraestructura para iniciar la corrección. Al cerrar accesos innecesarios, actualizar credenciales y separar las cámaras del resto de los equipos, el entorno gana control, reduce la exposición y mejora su capacidad de respuesta.
+          No se requiere nueva infraestructura. El riesgo proviene de UPnP, puertos abiertos, credenciales por defecto y falta de segmentación. Corregirlos reduce el riesgo de crítico a medio; con segmentación, a controlado.
         </div>
       </section>
     </section>
 
     <section id="tab2" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-2" hidden>
       <header class="hero">
-        <h2>Registros y monitoreo</h2>
-        <span class="tab-title">Logs y trazabilidad</span>
+        <h2>Registro de eventos (Logs)</h2>
+        <span class="tab-title">Análisis 2</span>
         <p>
-          Hoy no hay suficiente visibilidad sobre lo que ocurre en la red y en los dispositivos. Sin registros, accesos, errores o cambios de configuración pueden pasar inadvertidos.
+          No hay visibilidad sobre lo que ocurre en la red. Sin registros, accesos, fallos o cambios pasan desapercibidos.
         </p>
         <p>
-          Esto no solo limita la detección. También impide investigar un incidente con evidencia mínima y tomar decisiones correctivas con rapidez.
+          Un incidente no detectado no puede investigarse ni corregirse.
         </p>
       </header>
 
       <section>
-        <h2>Hallazgos clave</h2>
+        <h2>Síntesis del análisis</h2>
         <div class="grid">
           <article class="card">
-            <h3>Problema principal</h3>
-            <p>El router y la cámara no ofrecen, o no tienen activados, registros consistentes de accesos, eventos y cambios relevantes.</p>
-            <span class="pill high">Prioridad inmediata</span>
+            <h3>Vector de exposición</h3>
+            <p>Sin logs en router o cámara; accesos y eventos no quedan registrados.</p>
+            <span class="pill high">Exposición alta</span>
           </article>
           <article class="card">
-            <h3>Por qué importa</h3>
-            <p>Un fallo operativo o un acceso no autorizado puede producirse sin alertas ni evidencia suficiente para reconstruir lo ocurrido.</p>
+            <h3>Nivel de riesgo</h3>
+            <p>Riesgo alto: intrusiones o fallos pueden ocurrir sin ser detectados.</p>
             <span class="pill high">Riesgo alto</span>
           </article>
           <article class="card">
-            <h3>Impacto probable</h3>
-            <p>Sin trazabilidad, resulta difícil determinar cuándo empezó un incidente, qué afectó y hasta dónde se extendió.</p>
-            <span class="pill high">Respuesta limitada</span>
+            <h3>Vector de traslado</h3>
+            <p>Sin trazabilidad, no se identifica origen ni propagación de un incidente.</p>
+            <span class="pill high">Traslado alto</span>
           </article>
         </div>
       </section>
 
       <section>
-        <h2>Riesgo e impacto</h2>
+        <h2>Diagnóstico consolidado</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Factor</th>
               <th scope="col">Estado actual</th>
-              <th scope="col">Por qué importa</th>
+              <th scope="col">Implicación</th>
               <th scope="col">Nivel</th>
             </tr>
           </thead>
@@ -540,25 +540,25 @@
             <tr>
               <td>Logs en router</td>
               <td>No configurados</td>
-              <td>Se pierde visibilidad sobre accesos, conexiones y cambios administrativos.</td>
+              <td>No hay registro de accesos, conexiones o cambios.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
             <tr>
               <td>Logs en cámara</td>
               <td>Desconocido / no revisado</td>
-              <td>Puede haber actividad relevante sin registro verificable.</td>
+              <td>Posibles accesos no detectados.</td>
               <td><span class="badge danger">Alto</span></td>
             </tr>
             <tr>
               <td>Retención</td>
               <td>No existe</td>
-              <td>No se pueden revisar eventos pasados ni sostener una investigación básica.</td>
+              <td>Eventos pasados no pueden analizarse.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
             <tr>
               <td>Monitoreo</td>
               <td>No existe</td>
-              <td>Los comportamientos anómalos dependen de revisión manual o se descubren tarde.</td>
+              <td>No hay alertas ante comportamientos anómalos.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
           </tbody>
@@ -566,14 +566,14 @@
       </section>
 
       <section>
-        <h2>Recomendación concreta</h2>
+        <h2>Plan de aseguramiento (1 semana)</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Fase</th>
               <th scope="col">Objetivo</th>
               <th scope="col">Acciones principales</th>
-              <th scope="col">Qué corrige</th>
+              <th scope="col">Problema que resuelve</th>
               <th scope="col">Tiempo</th>
               <th scope="col">Resultado esperado</th>
             </tr>
@@ -589,7 +589,7 @@
                   <li>Configurar nivel de registro</li>
                 </ul>
               </td>
-              <td>Establece un punto mínimo de visibilidad operativa.</td>
+              <td>Da visibilidad inicial de eventos.</td>
               <td>2–3 horas</td>
               <td><span class="badge warning">Visibilidad básica</span></td>
             </tr>
@@ -603,7 +603,7 @@
                   <li>Sincronizar hora con NTP</li>
                 </ul>
               </td>
-              <td>Permite revisar hechos pasados y relacionar eventos entre equipos.</td>
+              <td>Permite análisis histórico y correlación.</td>
               <td>3–5 horas</td>
               <td><span class="badge warning">Trazabilidad disponible</span></td>
             </tr>
@@ -617,7 +617,7 @@
                   <li>Documentar incidentes</li>
                 </ul>
               </td>
-              <td>Mejora la detección temprana y el seguimiento de incidentes.</td>
+              <td>Detecta anomalías y permite respuesta temprana.</td>
               <td>2–4 horas</td>
               <td><span class="badge safe">Control operativo</span></td>
             </tr>
@@ -626,54 +626,54 @@
       </section>
 
       <section>
-        <h2>Resultado esperado</h2>
+        <h2>Conclusión ejecutiva</h2>
         <div class="footer-note">
-          Los logs no sustituyen otras medidas de seguridad, pero sí aportan evidencia para detectar desviaciones, entender su impacto y responder con mayor criterio y rapidez.
+          Sin registros no hay control. Activar, conservar y revisar logs no elimina el riesgo por sí solo, pero permite detectarlo, investigarlo y responder a tiempo.
         </div>
       </section>
     </section>
 
     <section id="tab3" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-3" hidden>
       <header class="hero">
-        <h2>Acceso remoto mediante app predeterminada (iCSee)</h2>
-        <span class="tab-title">App y acceso remoto</span>
+        <h2>Uso de App predeterminada (iCSee)</h2>
+        <span class="tab-title">Análisis 3</span>
         <p>
-          La app no solo facilita la operación. También introduce un tercero en la cadena de acceso al depender de servicios externos, cuentas asociadas y funciones de conexión remota.
+          La app actúa como intermediario externo. Amplía la superficie de ataque al depender de servicios y credenciales fuera de la red local.
         </p>
         <p>
-          En la práctica, parte del acceso deja de depender únicamente de la red local y puede pasar por infraestructura del proveedor, fuera del control directo del entorno evaluado.
+          El acceso deja de ser solo interno: puede pasar por servidores externos y eludir controles locales.
         </p>
       </header>
 
       <section>
-        <h2>Hallazgos clave</h2>
+        <h2>Síntesis del análisis</h2>
         <div class="grid">
           <article class="card">
-            <h3>Problema principal</h3>
-            <p>El uso de P2P o servicios en la nube puede desviar tráfico y autenticación fuera de la red local.</p>
-            <span class="pill high">Prioridad inmediata</span>
+            <h3>Vector de exposición</h3>
+            <p>Uso de P2P o nube, credenciales en terceros y tráfico fuera de la red.</p>
+            <span class="pill high">Exposición alta</span>
           </article>
           <article class="card">
-            <h3>Por qué importa</h3>
-            <p>La seguridad deja de depender solo de la configuración interna y pasa a depender también de la protección del proveedor y de la cuenta asociada.</p>
+            <h3>Nivel de riesgo</h3>
+            <p>Riesgo alto: acceso remoto indirecto y dependencia de la seguridad del proveedor.</p>
             <span class="pill high">Riesgo alto</span>
           </article>
           <article class="card">
-            <h3>Impacto probable</h3>
-            <p>Si la cuenta, la app o el servicio intermedio se ven comprometidos, la cámara podría quedar accesible sin pasar por los controles locales habituales.</p>
-            <span class="pill high">Respuesta limitada</span>
+            <h3>Vector de traslado</h3>
+            <p>Si la cuenta o app se compromete, se accede a la cámara sin pasar por la red local.</p>
+            <span class="pill high">Traslado alto</span>
           </article>
         </div>
       </section>
 
       <section>
-        <h2>Riesgo e impacto</h2>
+        <h2>Diagnóstico consolidado</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Factor</th>
               <th scope="col">Estado actual</th>
-              <th scope="col">Por qué importa</th>
+              <th scope="col">Implicación</th>
               <th scope="col">Nivel</th>
             </tr>
           </thead>
@@ -681,25 +681,25 @@
             <tr>
               <td>Dependencia externa</td>
               <td>Activa</td>
-              <td>Parte del control operativo y de seguridad recae en infraestructura externa.</td>
+              <td>El acceso pasa por servidores de terceros.</td>
               <td><span class="badge danger">Alto</span></td>
             </tr>
             <tr>
               <td>P2P / nube</td>
               <td>Habilitado</td>
-              <td>Puede abrir rutas de acceso que no se supervisan desde el router local.</td>
+              <td>Puede exponer el dispositivo fuera del control del router.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
             <tr>
               <td>Credenciales</td>
               <td>Compartidas con app</td>
-              <td>Amplía los puntos en los que una cuenta o secreto puede verse comprometido.</td>
+              <td>Mayor superficie de robo, filtración o abuso.</td>
               <td><span class="badge danger">Alto</span></td>
             </tr>
             <tr>
               <td>Visibilidad</td>
               <td>Baja</td>
-              <td>Limita la capacidad de verificar por dónde pasa el tráfico y quién lo intermedia.</td>
+              <td>No se controla ni audita el tráfico externo.</td>
               <td><span class="badge danger">Crítico</span></td>
             </tr>
           </tbody>
@@ -707,14 +707,14 @@
       </section>
 
       <section>
-        <h2>Recomendación concreta</h2>
+        <h2>Plan de aseguramiento (1 semana)</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Fase</th>
               <th scope="col">Objetivo</th>
               <th scope="col">Acciones principales</th>
-              <th scope="col">Qué corrige</th>
+              <th scope="col">Problema que resuelve</th>
               <th scope="col">Tiempo</th>
               <th scope="col">Resultado esperado</th>
             </tr>
@@ -730,7 +730,7 @@
                   <li>Cambiar credenciales</li>
                 </ul>
               </td>
-              <td>Reduce la dependencia de accesos remotos fuera del control directo.</td>
+              <td>Evita acceso externo no controlado.</td>
               <td>2–3 horas</td>
               <td><span class="badge warning">Acceso limitado</span></td>
             </tr>
@@ -745,7 +745,7 @@
                   <li>Configurar usuario local</li>
                 </ul>
               </td>
-              <td>Recupera control operativo al mantener el acceso dentro de la red local.</td>
+              <td>Elimina intermediarios y centraliza control en la red.</td>
               <td>3–5 horas</td>
               <td><span class="badge warning">Control local</span></td>
             </tr>
@@ -759,7 +759,7 @@
                   <li>Integrar con NVR o visor local</li>
                 </ul>
               </td>
-              <td>Restringe comunicaciones salientes que no aportan valor operativo.</td>
+              <td>Evita comunicaciones externas no autorizadas.</td>
               <td>3–6 horas</td>
               <td><span class="badge safe">Aislamiento efectivo</span></td>
             </tr>
@@ -768,9 +768,9 @@
       </section>
 
       <section>
-        <h2>Resultado esperado</h2>
+        <h2>Conclusión ejecutiva</h2>
         <div class="footer-note">
-          La app puede ser conveniente para la operación diaria, pero también amplía la dependencia externa. Siempre que sea viable, el acceso local por IP, RTSP u ONVIF ofrece más control, menos intermediarios y una superficie de exposición menor.
+          La app simplifica el uso, pero amplía el riesgo al sacar el control fuera de la red. El acceso directo por IP o RTSP elimina intermediarios y reduce la superficie de ataque.
         </div>
       </section>
     </section>
