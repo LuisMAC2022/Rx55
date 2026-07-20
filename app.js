@@ -468,6 +468,7 @@ function updateShellChrome() {
 
   const connectionButton = document.querySelector("#connection-toggle");
   const connectionLabel = document.querySelector("#connection-label");
+  connectionButton.hidden = state.role !== "caseta";
   connectionButton.classList.toggle("is-online", state.online);
   connectionButton.classList.toggle("is-offline", !state.online);
   connectionButton.setAttribute(
