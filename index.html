@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Demo navegable del sistema de administración del Condominio RX55. Datos completamente simulados."
+    />
+    <meta name="theme-color" content="#123f39" />
+    <title>RX55 · Demo de administración</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <div id="app">
+      <section class="auth-screen" id="auth-screen" aria-labelledby="auth-title">
+        <div class="auth-story">
+          <div class="auth-brand">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span>RX55</span>
+          </div>
+
+          <div class="auth-story__copy">
+            <p class="eyebrow eyebrow--light">Administración en calma</p>
+            <h1 id="auth-title">Lo importante del condominio, claro y a la mano.</h1>
+            <p>
+              Una vista simple para residentes, caseta y administración. Esta demo usa
+              información ficticia y no se conecta a ningún servicio.
+            </p>
+          </div>
+
+          <div class="auth-flow" aria-label="Módulos principales">
+            <div class="auth-flow__item">
+              <span class="auth-flow__number">01</span>
+              <span><strong>Accesos</strong><small>Movimientos trazables</small></span>
+            </div>
+            <div class="auth-flow__item">
+              <span class="auth-flow__number">02</span>
+              <span><strong>Paquetería</strong><small>Aviso y entrega</small></span>
+            </div>
+            <div class="auth-flow__item">
+              <span class="auth-flow__number">03</span>
+              <span><strong>Mantenimiento</strong><small>Saldos explicables</small></span>
+            </div>
+          </div>
+
+          <p class="auth-story__foot">Prototipo pre-MVP · Julio 2026</p>
+        </div>
+
+        <div class="auth-panel">
+          <div class="auth-panel__inner">
+            <div class="demo-flag" role="note">
+              <span aria-hidden="true">●</span>
+              Entorno demostrativo · No ingreses datos reales
+            </div>
+
+            <div id="login-step">
+              <p class="eyebrow">Acceso por invitación</p>
+              <h2>Explora un perfil</h2>
+              <p class="lead">
+                En el producto real recibirías un enlace de acceso por correo. Para esta
+                muestra, elige el rol que quieres recorrer.
+              </p>
+
+              <div class="profile-picker" role="group" aria-label="Perfil de demostración">
+                <button class="profile-option is-selected" type="button" data-demo-role="resident" aria-pressed="true">
+                  <span class="profile-option__icon" aria-hidden="true">R</span>
+                  <span><strong>Residente</strong><small>Paquetes y saldo</small></span>
+                  <span class="profile-option__check" aria-hidden="true">✓</span>
+                </button>
+                <button class="profile-option" type="button" data-demo-role="caseta" aria-pressed="false">
+                  <span class="profile-option__icon" aria-hidden="true">C</span>
+                  <span><strong>Caseta</strong><small>Accesos y entregas</small></span>
+                  <span class="profile-option__check" aria-hidden="true">✓</span>
+                </button>
+                <button class="profile-option" type="button" data-demo-role="admin" aria-pressed="false">
+                  <span class="profile-option__icon" aria-hidden="true">A</span>
+                  <span><strong>Administración</strong><small>Operación y control</small></span>
+                  <span class="profile-option__check" aria-hidden="true">✓</span>
+                </button>
+              </div>
+
+              <form id="login-form" class="auth-form">
+                <label for="login-email">Correo invitado</label>
+                <div class="input-with-icon">
+                  <span aria-hidden="true">@</span>
+                  <input
+                    id="login-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    value="residente@demo.rx55.mx"
+                    required
+                  />
+                </div>
+                <button class="button button--primary button--wide" type="submit">
+                  Enviar enlace de acceso
+                  <span aria-hidden="true">→</span>
+                </button>
+              </form>
+
+              <p class="auth-privacy">
+                Al continuar podrás revisar el aviso de privacidad. El sistema real no
+                confirma si un correo está registrado.
+              </p>
+            </div>
+
+            <div id="link-step" class="auth-result" hidden>
+              <div class="success-orbit" aria-hidden="true"><span>✓</span></div>
+              <p class="eyebrow">Enlace enviado</p>
+              <h2>Revisa tu correo</h2>
+              <p>
+                Si <strong id="sent-email">tu correo</strong> tiene una invitación vigente,
+                recibirá un enlace de un solo uso.
+              </p>
+              <div class="demo-link-card">
+                <span class="demo-link-card__label">Atajo de demostración</span>
+                <button class="button button--primary button--wide" id="open-demo-link" type="button">
+                  Abrir enlace simulado <span aria-hidden="true">→</span>
+                </button>
+                <small>El enlace real expiraría en 10 minutos.</small>
+              </div>
+              <button class="button button--text" id="back-to-login" type="button">← Usar otro perfil</button>
+            </div>
+
+            <div id="privacy-step" class="privacy-gate" hidden>
+              <p class="eyebrow">Antes de comenzar</p>
+              <h2>Tus datos, solo para operar</h2>
+              <p class="lead">
+                Esta muestra refleja el principio del producto: pedir lo mínimo y explicar
+                para qué se usa.
+              </p>
+
+              <div class="privacy-summary">
+                <div>
+                  <span class="summary-icon" aria-hidden="true">✓</span>
+                  <p><strong>Datos mínimos</strong><small>Correo, alias, rol y vínculo con departamento.</small></p>
+                </div>
+                <div>
+                  <span class="summary-icon" aria-hidden="true">—</span>
+                  <p><strong>Sin datos sensibles</strong><small>No se piden biometría, identificación ni datos bancarios.</small></p>
+                </div>
+                <div>
+                  <span class="summary-icon" aria-hidden="true">↗</span>
+                  <p><strong>Derechos ARCO</strong><small>El canal definitivo se publicará antes del piloto real.</small></p>
+                </div>
+              </div>
+
+              <div class="legal-note" role="note">
+                <strong>Aviso demostrativo</strong>
+                <p>
+                  El responsable legal, domicilio, canal ARCO y aviso integral aún requieren
+                  validación de la administración y asesoría jurídica.
+                </p>
+              </div>
+
+              <label class="check-row" for="privacy-ack">
+                <input id="privacy-ack" type="checkbox" />
+                <span>Confirmo que recibí este aviso demostrativo.</span>
+              </label>
+              <button class="button button--primary button--wide" id="enter-app" type="button" disabled>
+                Entrar a la demo <span aria-hidden="true">→</span>
+              </button>
+              <button class="button button--text" id="exit-privacy" type="button">Salir y volver</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-shell" id="demo-shell" hidden aria-label="Aplicación RX55">
+        <aside class="sidebar">
+          <a class="sidebar__brand" href="#" data-action="home" aria-label="RX55, ir al inicio">
+            <span class="brand-mark brand-mark--small" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span>RX55</span>
+          </a>
+
+          <div class="sidebar__context">
+            <span>Espacio</span>
+            <strong>Condominio 54</strong>
+          </div>
+
+          <nav class="side-nav" id="side-nav" aria-label="Navegación principal"></nav>
+
+          <div class="sidebar__spacer"></div>
+
+          <div class="prototype-card">
+            <span class="prototype-card__dot" aria-hidden="true"></span>
+            <div>
+              <strong>Demo navegable</strong>
+              <small>Todos los datos son ficticios</small>
+            </div>
+          </div>
+
+          <button class="sidebar-profile" id="sidebar-profile" type="button" data-action="profile">
+            <span class="avatar" id="sidebar-avatar">MR</span>
+            <span><strong id="sidebar-name">Mariana R.</strong><small id="sidebar-role">Residente</small></span>
+            <span aria-hidden="true">•••</span>
+          </button>
+        </aside>
+
+        <div class="workspace">
+          <header class="topbar">
+            <div class="mobile-brand" aria-label="RX55">
+              <span class="brand-mark brand-mark--small" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+              <strong>RX55</strong>
+            </div>
+
+            <div class="topbar__title">
+              <span id="page-kicker">Resumen</span>
+              <h1 id="page-title">Hola, Mariana</h1>
+            </div>
+
+            <div class="topbar__actions">
+              <button class="connection-pill is-online" id="connection-toggle" type="button" data-action="toggle-online">
+                <span aria-hidden="true"></span>
+                <span id="connection-label">En línea</span>
+              </button>
+              <label class="role-switch" for="role-switch">
+                <span>Vista</span>
+                <select id="role-switch" aria-label="Cambiar perfil de demostración">
+                  <option value="resident">Residente</option>
+                  <option value="caseta">Caseta</option>
+                  <option value="admin">Administración</option>
+                </select>
+              </label>
+              <button class="icon-button" type="button" data-action="show-privacy" aria-label="Ver privacidad">
+                <span aria-hidden="true">i</span>
+              </button>
+            </div>
+          </header>
+
+          <main id="main-content" tabindex="-1"></main>
+
+          <nav class="bottom-nav" id="bottom-nav" aria-label="Navegación móvil"></nav>
+        </div>
+      </section>
+    </div>
+
+    <dialog class="modal" id="app-modal" aria-labelledby="modal-title">
+      <div class="modal__surface">
+        <div class="modal__header">
+          <div>
+            <p class="eyebrow" id="modal-kicker">Detalle</p>
+            <h2 id="modal-title">Información</h2>
+          </div>
+          <button class="icon-button icon-button--quiet" type="button" data-action="close-modal" aria-label="Cerrar ventana">×</button>
+        </div>
+        <div class="modal__body" id="modal-body"></div>
+      </div>
+    </dialog>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
